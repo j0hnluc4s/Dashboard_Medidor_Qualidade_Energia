@@ -15,64 +15,156 @@
     <main class="dashboard">
 
         <header class="header">
-            <div>
+
+            <div class="header-text">
                 <h1>⚡ Medidor de Energia</h1>
                 <p>Monitoramento e análise do consumo elétrico</p>
             </div>
 
             <div class="status">
                 <span class="status-dot"></span>
-                Online
+                <span>Online</span>
             </div>
+
         </header>
 
 
         <section class="cards">
 
             <div class="card">
+
                 <span class="card-title">Tensão</span>
-                <strong id="voltage">220,4 V</strong>
+
+                <div class="card-value">
+                    <strong id="voltage">220,4</strong>
+                    <span>V</span>
+                </div>
+
+                <p class="card-description">Tensão RMS</p>
+
             </div>
 
+
             <div class="card">
+
                 <span class="card-title">Corrente</span>
-                <strong id="current">3,21 A</strong>
+
+                <div class="card-value">
+                    <strong id="current">3,21</strong>
+                    <span>A</span>
+                </div>
+
+                <p class="card-description">Corrente RMS</p>
+
             </div>
 
+
             <div class="card">
+
                 <span class="card-title">Potência</span>
-                <strong id="power">706 W</strong>
+
+                <div class="card-value">
+                    <strong id="power">706</strong>
+                    <span>W</span>
+                </div>
+
+                <p class="card-description">Potência ativa</p>
+
             </div>
 
         </section>
 
 
-        <section class="content">
+        <section class="main-grid">
 
-            <div class="chart-area">
-                <h2>Potência ao longo do tempo</h2>
-                <p>Histórico das últimas medições</p>
 
-                <div class="chart-placeholder">
-                    Gráfico será inserido aqui
+            <div class="panel chart-panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <h2>Potência ao longo do tempo</h2>
+                        <p>Histórico das últimas medições</p>
+                    </div>
+
+                    <select id="time-range">
+                        <option value="1h">1 hora</option>
+                        <option value="6h">6 horas</option>
+                        <option value="24h">24 horas</option>
+                    </select>
+
                 </div>
+
+                <div id="power-chart" class="chart-container">
+                </div>
+
             </div>
 
 
-            <div class="info-area">
-                <h2>Informações</h2>
+            <div class="panel information-panel">
 
-                <div class="info-row">
-                    <span>Energia</span>
-                    <strong>2,43 kWh</strong>
+                <div class="panel-header">
+                    <div>
+                        <h2>Informações</h2>
+                        <p>Dados elétricos atuais</p>
+                    </div>
                 </div>
 
-                <div class="info-row">
+
+                <div class="info-list">
+
+                    <div class="info-row">
+                        <span>Energia consumida</span>
+                        <strong id="energy">2,43 kWh</strong>
+                    </div>
+
+                    <div class="info-row">
+                        <span>Fator de potência</span>
+                        <strong id="power-factor">0,91</strong>
+                    </div>
+
+                    <div class="info-row">
+                        <span>Frequência</span>
+                        <strong id="frequency">60 Hz</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="panel analysis-panel">
+
+            <div class="panel-header">
+
+                <div>
+                    <h2>Análise elétrica</h2>
+                    <p>Indicadores calculados a partir das medições</p>
+                </div>
+
+            </div>
+
+
+            <div class="analysis-grid">
+
+                <div class="analysis-item">
+                    <span>Potência aparente</span>
+                    <strong>708 VA</strong>
+                </div>
+
+                <div class="analysis-item">
+                    <span>Potência reativa</span>
+                    <strong>294 var</strong>
+                </div>
+
+                <div class="analysis-item">
                     <span>Fator de potência</span>
                     <strong>0,91</strong>
                 </div>
 
-                <div class="info-row">
+                <div class="analysis-item">
                     <span>Frequência</span>
                     <strong>60 Hz</strong>
                 </div>
@@ -81,10 +173,15 @@
 
         </section>
 
+
+        <footer class="footer">
+            <p>Medidor de Energia • Dashboard de Qualidade de Energia</p>
+        </footer>
+
     </main>
 
 
-    <script src="js/main.js"></script>
+    <script type="module" src="js/main.js"></script>
 
 </body>
 
