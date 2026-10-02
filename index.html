@@ -1,298 +1,91 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Medidor de Energia</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f7f9fc;
-            color: #172033;
-            padding: 40px;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: auto;
-        }
-
-        header {
-            margin-bottom: 35px;
-        }
-
-        .title {
-            font-size: 32px;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-
-        .subtitle {
-            color: #7b8496;
-            font-size: 15px;
-        }
-
-        .status {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            margin-top: 18px;
-            padding: 8px 13px;
-            background: #eef8f2;
-            color: #34845a;
-            border-radius: 20px;
-            font-size: 13px;
-            font-weight: 600;
-        }
-
-        .status-dot {
-            width: 8px;
-            height: 8px;
-            background: #43a86b;
-            border-radius: 50%;
-        }
-
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin-bottom: 25px;
-        }
-
-        .card {
-            background: white;
-            border: 1px solid #e9edf3;
-            border-radius: 18px;
-            padding: 25px;
-            box-shadow: 0 5px 20px rgba(30, 50, 80, 0.04);
-        }
-
-        .card-label {
-            color: #8a93a5;
-            font-size: 14px;
-            margin-bottom: 15px;
-        }
-
-        .card-value {
-            font-size: 32px;
-            font-weight: 700;
-            color: #172033;
-        }
-
-        .card-unit {
-            font-size: 16px;
-            color: #7b8496;
-            margin-left: 4px;
-        }
-
-        .main-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 20px;
-        }
-
-        .chart-card {
-            background: white;
-            border: 1px solid #e9edf3;
-            border-radius: 18px;
-            padding: 25px;
-            min-height: 320px;
-            box-shadow: 0 5px 20px rgba(30, 50, 80, 0.04);
-        }
-
-        .chart-title {
-            font-size: 17px;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-
-        .chart-subtitle {
-            color: #929aaa;
-            font-size: 13px;
-            margin-bottom: 25px;
-        }
-
-        .chart-placeholder {
-            height: 210px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 12px;
-            background: #f8faff;
-            color: #a0a8b8;
-            font-size: 14px;
-        }
-
-        .info-card {
-            background: white;
-            border: 1px solid #e9edf3;
-            border-radius: 18px;
-            padding: 25px;
-            box-shadow: 0 5px 20px rgba(30, 50, 80, 0.04);
-        }
-
-        .info-title {
-            font-size: 17px;
-            font-weight: 600;
-            margin-bottom: 22px;
-        }
-
-        .info-row {
-            display: flex;
-            justify-content: space-between;
-            padding: 15px 0;
-            border-bottom: 1px solid #eef1f5;
-        }
-
-        .info-row:last-child {
-            border-bottom: none;
-        }
-
-        .info-name {
-            color: #7b8496;
-            font-size: 14px;
-        }
-
-        .info-value {
-            font-weight: 600;
-            font-size: 14px;
-        }
-
-        footer {
-            text-align: center;
-            color: #a0a8b8;
-            font-size: 12px;
-            margin-top: 35px;
-        }
-
-        @media (max-width: 800px) {
-            body {
-                padding: 25px;
-            }
-
-            .cards {
-                grid-template-columns: 1fr;
-            }
-
-            .main-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-<div class="container">
+    <main class="dashboard">
 
-    <header>
-        <div class="title">Medidor de Energia</div>
-
-        <div class="subtitle">
-            Monitoramento e análise do consumo elétrico
-        </div>
-
-        <div class="status">
-            <span class="status-dot"></span>
-            Sistema online
-        </div>
-    </header>
-
-
-    <section class="cards">
-
-        <div class="card">
-            <div class="card-label">Tensão</div>
-
-            <div class="card-value">
-                220,4 <span class="card-unit">V</span>
-            </div>
-        </div>
-
-
-        <div class="card">
-            <div class="card-label">Corrente</div>
-
-            <div class="card-value">
-                3,21 <span class="card-unit">A</span>
-            </div>
-        </div>
-
-
-        <div class="card">
-            <div class="card-label">Potência</div>
-
-            <div class="card-value">
-                706 <span class="card-unit">W</span>
-            </div>
-        </div>
-
-    </section>
-
-
-    <section class="main-grid">
-
-        <div class="chart-card">
-
-            <div class="chart-title">
-                Potência ao longo do tempo
+        <header class="header">
+            <div>
+                <h1>⚡ Medidor de Energia</h1>
+                <p>Monitoramento e análise do consumo elétrico</p>
             </div>
 
-            <div class="chart-subtitle">
-                Últimas medições registradas
+            <div class="status">
+                <span class="status-dot"></span>
+                Online
+            </div>
+        </header>
+
+
+        <section class="cards">
+
+            <div class="card">
+                <span class="card-title">Tensão</span>
+                <strong id="voltage">220,4 V</strong>
             </div>
 
-            <div class="chart-placeholder">
-                Gráfico será inserido aqui
+            <div class="card">
+                <span class="card-title">Corrente</span>
+                <strong id="current">3,21 A</strong>
             </div>
 
-        </div>
-
-
-        <div class="info-card">
-
-            <div class="info-title">
-                Informações
+            <div class="card">
+                <span class="card-title">Potência</span>
+                <strong id="power">706 W</strong>
             </div>
 
-            <div class="info-row">
-                <span class="info-name">Energia</span>
-                <span class="info-value">2,43 kWh</span>
+        </section>
+
+
+        <section class="content">
+
+            <div class="chart-area">
+                <h2>Potência ao longo do tempo</h2>
+                <p>Histórico das últimas medições</p>
+
+                <div class="chart-placeholder">
+                    Gráfico será inserido aqui
+                </div>
             </div>
 
-            <div class="info-row">
-                <span class="info-name">Fator de potência</span>
-                <span class="info-value">0,91</span>
+
+            <div class="info-area">
+                <h2>Informações</h2>
+
+                <div class="info-row">
+                    <span>Energia</span>
+                    <strong>2,43 kWh</strong>
+                </div>
+
+                <div class="info-row">
+                    <span>Fator de potência</span>
+                    <strong>0,91</strong>
+                </div>
+
+                <div class="info-row">
+                    <span>Frequência</span>
+                    <strong>60 Hz</strong>
+                </div>
+
             </div>
 
-            <div class="info-row">
-                <span class="info-name">Frequência</span>
-                <span class="info-value">60 Hz</span>
-            </div>
+        </section>
 
-            <div class="info-row">
-                <span class="info-name">Atualização</span>
-                <span class="info-value">15 s</span>
-            </div>
-
-        </div>
-
-    </section>
+    </main>
 
 
-    <footer>
-        Medidor de Energia IoT • Dashboard
-    </footer>
-
-</div>
+    <script src="js/main.js"></script>
 
 </body>
+
 </html>
