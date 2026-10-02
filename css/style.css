@@ -152,9 +152,15 @@ body {
     font-size: 13px;
 }
 
-/* Seletor de período */
+/* Controles do gráfico */
 
-#time-range {
+.chart-controls {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.chart-controls select {
     border: 1px solid #e1e7ef;
     background: #ffffff;
     color: #5f6b7d;
@@ -295,7 +301,12 @@ body {
         flex-direction: column;
     }
 
-    #time-range {
+    .chart-controls {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .chart-controls select {
         width: 100%;
     }
 }

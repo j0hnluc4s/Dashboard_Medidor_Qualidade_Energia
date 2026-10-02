@@ -80,20 +80,35 @@
 
             <div class="panel chart-panel">
 
-                <div class="panel-header">
+<div class="panel-header">
 
-                    <div>
-                        <h2>Potência ao longo do tempo</h2>
-                        <p>Histórico das últimas medições</p>
-                    </div>
+    <div>
+        <h2 id="chart-title">Potência ao longo do tempo</h2>
+        <p>Histórico das últimas medições</p>
+    </div>
 
-                    <select id="time-range">
-                        <option value="1h">1 hora</option>
-                        <option value="6h">6 horas</option>
-                        <option value="24h">24 horas</option>
-                    </select>
+    <div class="chart-controls">
 
-                </div>
+        <select id="measurement-type">
+            <option value="power">Potência</option>
+            <option value="voltage">Tensão</option>
+            <option value="current">Corrente</option>
+            <option value="energy">Energia consumida</option>
+            <option value="power-factor">Fator de potência</option>
+            <option value="frequency">Frequência</option>
+            <option value="apparent-power">Potência aparente</option>
+            <option value="reactive-power">Potência reativa</option>
+        </select>
+
+        <select id="time-range">
+            <option value="1h">1 hora</option>
+            <option value="6h">6 horas</option>
+            <option value="24h">24 horas</option>
+        </select>
+
+    </div>
+
+</div>
 
                 <div id="power-chart" class="chart-container">
                 </div>
