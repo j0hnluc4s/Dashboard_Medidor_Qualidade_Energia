@@ -1,4 +1,3 @@
-import ApexCharts from "apexcharts";
 import { obterDados } from "./googleSheets.js";
 import { processarDados } from "./analysis.js";
 
