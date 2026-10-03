@@ -29,9 +29,9 @@ const grandezas = {
 };
 
 const quantidadePorPeriodo = {
-    "1h": 6,
-    "6h": 36,
-    "24h": 144
+    "1h": 240,
+    "6h": 1440,
+    "24h": 5760
 };
 
 function obterDadosDoPeriodo(periodo, grandeza) {
