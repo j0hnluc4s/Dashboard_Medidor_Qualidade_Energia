@@ -61,14 +61,14 @@
 
             <div class="card">
 
-                <span class="card-title">Potência</span>
+                <span class="card-title">Potência aparente</span>
 
                 <div class="card-value">
                     <strong id="power">706</strong>
-                    <span>W</span>
+                    <span>VA</span>
                 </div>
 
-                <p class="card-description">Potência ativa</p>
+                <p class="card-description">Potência aparente</p>
 
             </div>
 
@@ -83,21 +83,16 @@
 <div class="panel-header">
 
     <div>
-        <h2 id="chart-title">Potência ao longo do tempo</h2>
+        <h2 id="chart-title">Tensão ao longo do tempo</h2>
         <p>Histórico das últimas medições</p>
     </div>
 
     <div class="chart-controls">
 
         <select id="measurement-type">
-            <option value="power">Potência</option>
             <option value="voltage">Tensão</option>
             <option value="current">Corrente</option>
-            <option value="energy">Energia consumida</option>
-            <option value="power-factor">Fator de potência</option>
-            <option value="frequency">Frequência</option>
             <option value="apparent-power">Potência aparente</option>
-            <option value="reactive-power">Potência reativa</option>
         </select>
 
         <select id="time-range">
@@ -118,34 +113,33 @@
 
             <div class="panel information-panel">
 
-                <div class="panel-header">
-                    <div>
-                        <h2>Informações</h2>
-                        <p>Dados elétricos atuais</p>
-                    </div>
-                </div>
+    <div class="panel-header">
+        <div>
+            <h2>Informações</h2>
+            <p>Dados elétricos atuais</p>
+        </div>
+    </div>
 
+    <div class="info-list">
 
-                <div class="info-list">
+        <div class="info-row">
+            <span>Tensão RMS</span>
+            <strong id="info-voltage">-- V</strong>
+        </div>
 
-                    <div class="info-row">
-                        <span>Energia consumida</span>
-                        <strong id="energy">2,43 kWh</strong>
-                    </div>
+        <div class="info-row">
+            <span>Corrente RMS</span>
+            <strong id="info-current">-- A</strong>
+        </div>
 
-                    <div class="info-row">
-                        <span>Fator de potência</span>
-                        <strong id="power-factor">0,91</strong>
-                    </div>
+        <div class="info-row">
+            <span>Potência aparente</span>
+            <strong id="info-apparent-power">-- VA</strong>
+        </div>
 
-                    <div class="info-row">
-                        <span>Frequência</span>
-                        <strong id="frequency">60 Hz</strong>
-                    </div>
+    </div>
 
-                </div>
-
-            </div>
+</div>
 
         </section>
 
@@ -162,29 +156,29 @@
             </div>
 
 
-            <div class="analysis-grid">
+           <div class="analysis-grid">
 
-                <div class="analysis-item">
-                    <span>Potência aparente</span>
-                    <strong>708 VA</strong>
-                </div>
+    <div class="analysis-item">
+        <span>Quantidade de medições</span>
+        <strong id="measurement-count">--</strong>
+    </div>
 
-                <div class="analysis-item">
-                    <span>Potência reativa</span>
-                    <strong>294 var</strong>
-                </div>
+    <div class="analysis-item">
+        <span>Intervalo entre medições</span>
+        <strong>10 min</strong>
+    </div>
 
-                <div class="analysis-item">
-                    <span>Fator de potência</span>
-                    <strong>0,91</strong>
-                </div>
+    <div class="analysis-item">
+        <span>Período disponível</span>
+        <strong>24 h</strong>
+    </div>
 
-                <div class="analysis-item">
-                    <span>Frequência</span>
-                    <strong>60 Hz</strong>
-                </div>
+    <div class="analysis-item">
+        <span>Fonte dos dados</span>
+        <strong>Simulação</strong>
+    </div>
 
-            </div>
+</div>
 
         </section>
 
