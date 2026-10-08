@@ -1,35 +1,87 @@
-import "./charts.js";
+import {
+    obterDadosPlanilha
+} from "./googleSheets.js";
 
-import { obterDados } from "./googleSheets.js";
+import {
+    processarDados
+} from "./analysis.js";
 
-import { processarDados } from "./analysis.js";
+import {
+    inicializarGrafico
+} from "./charts.js";
 
-const dados = obterDados();
+async function iniciarDashboard() {
 
-const dadosProcessados = processarDados(dados);
+    try {
 
-const ultimaMedicao = dadosProcessados[dadosProcessados.length - 1];
+        const dados =
+            await obterDadosPlanilha();
 
-document.querySelector("#voltage").textContent =
-    ultimaMedicao.tensao.toFixed(2).replace(".", ",");
+        const dadosProcessados =
+            processarDados(dados);
 
-document.querySelector("#current").textContent =
-    ultimaMedicao.corrente.toFixed(2).replace(".", ",");
+        const ultimaMedicao =
+            dadosProcessados[
+                dadosProcessados.length - 1
+            ];
 
-document.querySelector("#power").textContent =
-    ultimaMedicao.potenciaAparente.toFixed(2).replace(".", ",");
+        document.querySelector("#voltage").textContent =
+            ultimaMedicao.tensao
+                .toFixed(2)
+                .replace(".", ",");
 
-document.querySelector("#info-voltage").textContent =
-    `${ultimaMedicao.tensao.toFixed(2).replace(".", ",")} V`;
+        document.querySelector("#current").textContent =
+            ultimaMedicao.corrente
+                .toFixed(2)
+                .replace(".", ",");
 
-document.querySelector("#info-current").textContent =
-    `${ultimaMedicao.corrente.toFixed(2).replace(".", ",")} A`;
+        document.querySelector("#power").textContent =
+            ultimaMedicao.potenciaAparente
+                .toFixed(2)
+                .replace(".", ",");
 
-document.querySelector("#info-apparent-power").textContent =
-    `${ultimaMedicao.potenciaAparente.toFixed(2).replace(".", ",")} VA`;
+        document.querySelector("#info-voltage").textContent =
+            `${ultimaMedicao.tensao
+                .toFixed(2)
+                .replace(".", ",")} V`;
 
-document.querySelector("#measurement-count").textContent =
-    dadosProcessados.length;
+        document.querySelector("#info-current").textContent =
+            `${ultimaMedicao.corrente
+                .toFixed(2)
+                .replace(".", ",")} A`;
 
-console.log("Quantidade de medições:", dadosProcessados.length);
-console.log("Última medição:", ultimaMedicao);
+        document.querySelector("#info-apparent-power").textContent =
+            `${ultimaMedicao.potenciaAparente
+                .toFixed(2)
+                .replace(".", ",")} VA`;
+
+        document.querySelector("#measurement-count").textContent =
+            dadosProcessados.length;
+
+        inicializarGrafico(dados);
+
+        console.log(
+            "Dashboard carregado com dados reais."
+        );
+
+        console.log(
+            "Quantidade de medições:",
+            dadosProcessados.length
+        );
+
+        console.log(
+            "Última medição:",
+            ultimaMedicao
+        );
+
+    } catch (erro) {
+
+        console.error(
+            "Erro ao carregar dados do Google Sheets:",
+            erro
+        );
+
+    }
+}
+
+iniciarDashboard();
