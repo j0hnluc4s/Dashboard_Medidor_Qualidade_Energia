@@ -144,11 +144,47 @@
         </section>
 
 
+<section class="stats-section">
+    <div class="section-heading">
+        <div>
+            <h2>Estatísticas das medições</h2>
+            <p>Resumo dos valores registrados na planilha</p>
+        </div>
+
+
+    <select id="stats-type" aria-label="Grandeza das estatísticas">
+        <option value="tensao">Tensão (V)</option>
+        <option value="corrente">Corrente (A)</option>
+        <option value="potenciaAparente">Potência aparente (VA)</option>
+    </select>
+</div>
+
+<div class="stats-values">
+    <div>
+        <span>Média</span>
+        <strong id="stats-average">--</strong>
+    </div>
+
+    <div>
+        <span>Mínima</span>
+        <strong id="stats-min">--</strong>
+    </div>
+
+    <div>
+        <span>Máxima</span>
+        <strong id="stats-max">--</strong>
+    </div>
+</div>
+
+
+</section>
+
         <section class="panel analysis-panel">
 
             <div class="panel-header">
 
                 <div>
+                    
                     <h2>Análise elétrica</h2>
                     <p>Indicadores calculados a partir das medições</p>
                 </div>
@@ -158,25 +194,26 @@
 
            <div class="analysis-grid">
 
-    <div class="analysis-item">
-        <span>Quantidade de medições</span>
-        <strong id="measurement-count">--</strong>
-    </div>
+    
+<div class="analysis-item">
+    <span>Quantidade de medições</span>
+    <strong id="measurement-count">--</strong>
+</div>
 
-    <div class="analysis-item">
-        <span>Intervalo entre medições</span>
-        <strong>10 min</strong>
-    </div>
+<div class="analysis-item">
+    <span>Intervalo entre medições</span>
+    <strong id="measurement-interval">--</strong>
+</div>
 
-    <div class="analysis-item">
-        <span>Período disponível</span>
-        <strong>24 h</strong>
-    </div>
+<div class="analysis-item">
+    <span>Período disponível</span>
+    <strong id="available-period">--</strong>
+</div>
 
-    <div class="analysis-item">
-        <span>Fonte dos dados</span>
-        <strong>Simulação</strong>
-    </div>
+<div class="analysis-item">
+    <span>Fonte dos dados</span>
+    <strong id="data-source">Google Sheets</strong>
+</div>
 
 </div>
 
